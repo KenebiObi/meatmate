@@ -4,41 +4,39 @@ import 'package:meatmate/Onboarding%20Screens/onboarding_Screen_2.dart';
 import 'package:meatmate/SignUp_and_SignIn_Screens/SignUp_and_SignIn_Screen.dart';
 import 'package:meatmate/Splash_Screens/loading_screen.dart';
 import 'package:meatmate/Splash_Screens/splash_screen.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
 import 'Onboarding Screens/onboarding_screen_1.dart';
+import 'loading_page.dart';
 
 void main() {
   runApp(MeatmateApp());
 }
 
-class MeatmateApp extends StatefulWidget {
-  MeatmateApp({super.key});
-
-  @override
-  State<MeatmateApp> createState() => _MeatmateAppState();
-}
-
-class _MeatmateAppState extends State<MeatmateApp> {
-  var firstTimer;
-  var secondTimer;
-
-  @override
-  void initState() {
-    // TODO: implement
-    firstTimer = Timer(Duration(seconds: 5), () {
-      setState(() {});
-    });
-
-    secondTimer = Timer(Duration(seconds: 7), () {
-      setState(() {});
-    });
-    super.initState();
-  }
+class MeatmateApp extends StatelessWidget {
+  const MeatmateApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: firstTimer.isActive ? SplashScreen() : secondTimer.isActive? LoadingScreen(): OnboardingScreen1(),
+    Widget example1 = SplashScreenView(
+      navigateRoute: LoadingPage(),
+      duration: 5,
+      // speed: 2/
+      // imageSize: 130,
+      imageSrc: "assets/images/Splash_Screen_logo.png",
+      // text: "Splash Screen",
+      // textType: TextType.ColorizeAnimationText,
+      // textStyle: TextStyle(
+      //   fontSize: 40.0,
+      // ),
+      // colors: [
+      //   Colors.purple,
+      //   Colors.blue,
+      //   Colors.yellow,
+      //   Colors.red,
+      // ],
+      backgroundColor: Colors.white,
     );
+
+    return MaterialApp(debugShowCheckedModeBanner: false, home: example1);
   }
 }
