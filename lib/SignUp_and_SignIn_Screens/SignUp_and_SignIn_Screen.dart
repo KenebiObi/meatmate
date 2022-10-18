@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:meatmate/SignUp_and_SignIn_Screens/Sign_In_Screen.dart';
 
 class SignUpSignInInterface extends StatelessWidget {
   const SignUpSignInInterface({super.key});
@@ -59,7 +60,14 @@ class SignUpSignInInterface extends StatelessWidget {
                 const SizedBox(height: 60.0),
                 // The Sign In button
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignInScreen(),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 380.0,
                     height: 52.0,
@@ -168,17 +176,30 @@ class SignUpSignInInterface extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height:20.0,),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                // Facebook and google
                 Container(
                     child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image(
-                      image: AssetImage("assets/images/Facebook.png"),
+                    GestureDetector(
+                      onTap: () {
+                        print("Facebook");
+                      },
+                      child: const Image(
+                        image: AssetImage("assets/images/Facebook.png"),
+                      ),
                     ),
                     const SizedBox(width: 32.0),
-                    Image(
-                      image: AssetImage("assets/images/Google.png"),
+                    GestureDetector(
+                      onTap: () {
+                        print("Google");
+                      },
+                      child: const Image(
+                        image: AssetImage("assets/images/Google.png"),
+                      ),
                     ),
                   ],
                 ))

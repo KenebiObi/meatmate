@@ -2,7 +2,7 @@ import 'dart:async';
 
 void main() {
   first();
-  final firstTimer = Timer(Duration(seconds: 2), second);
+  final firstTimer = Timer(const Duration(seconds: 2), second);
 }
 
 void first() {

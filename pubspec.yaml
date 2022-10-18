@@ -37,6 +37,7 @@ dependencies:
   
   # Dependency for the animated splash screen
   splash_screen_view: ^3.0.0
+  animated_splash_screen: ^1.3.0
 
 dev_dependencies:
   flutter_test:

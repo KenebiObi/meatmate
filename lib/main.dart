@@ -1,42 +1,78 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:meatmate/Onboarding%20Screens/onboarding_Screen_2.dart';
-import 'package:meatmate/SignUp_and_SignIn_Screens/SignUp_and_SignIn_Screen.dart';
+import 'dart:async';
 import 'package:meatmate/Splash_Screens/loading_screen.dart';
 import 'package:meatmate/Splash_Screens/splash_screen.dart';
-import 'package:splash_screen_view/SplashScreenView.dart';
 import 'Onboarding Screens/onboarding_screen_1.dart';
-import 'loading_page.dart';
+// import 'package:splash_screen_view/SplashScreenView.dart';
+// import 'loading_page.dart';
+// import 'package:meatmate/Onboarding%20Screens/onboarding_Screen_2.dart';
+// import 'package:meatmate/SignUp_and_SignIn_Screens/SignUp_and_SignIn_Screen.dart';
 
 void main() {
   runApp(MeatmateApp());
 }
 
-class MeatmateApp extends StatelessWidget {
-  const MeatmateApp({super.key});
+// class MeatmateApp extends StatelessWidget {
+//   const MeatmateApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return AnimatedSplashScreen(
+//       splash: Image.asset("assets/images/Splash_Screen_logo.png"),
+//       nextScreen: const MainScreen(),
+//       duration: 2,
+//       backgroundColor: Colors.white,
+//        splashTransition: SplashTransition.fadeTransition,
+//       pageTransitionType: PageTransitionType.scale,
+//     );
+//   }
+// }
+
+// class MainScreen extends StatelessWidget {
+//   const MainScreen({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const LoadingPage();
+//   }
+// }
+
+class MeatmateApp extends StatefulWidget {
+  const MeatmateApp({Key? key}) : super(key: key);
+
+  @override
+  State<MeatmateApp> createState() => _MeatmateAppState();
+}
+
+class _MeatmateAppState extends State<MeatmateApp> {
+  var firstTimer;
+  var secondTimer;
+
+  @override
+  void initState() {
+    // ignore: todo
+    // TODO: implement
+    firstTimer = Timer(const Duration(seconds: 5), () {
+      setState(() {});
+    });
+
+    secondTimer = Timer(const Duration(seconds: 7), () {
+      setState(() {});
+    });
+    super.initState();
+
+    Color Coloe = Color.fromRGBO(1, 1, 2, 33);
+  }
 
   @override
   Widget build(BuildContext context) {
-    Widget example1 = SplashScreenView(
-      navigateRoute: LoadingPage(),
-      duration: 5,
-      // speed: 2/
-      // imageSize: 130,
-      imageSrc: "assets/images/Splash_Screen_logo.png",
-      // text: "Splash Screen",
-      // textType: TextType.ColorizeAnimationText,
-      // textStyle: TextStyle(
-      //   fontSize: 40.0,
-      // ),
-      // colors: [
-      //   Colors.purple,
-      //   Colors.blue,
-      //   Colors.yellow,
-      //   Colors.red,
-      // ],
-      backgroundColor: Colors.white,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: firstTimer.isActive
+          ? const SplashScreen()
+          : secondTimer.isActive
+              ? const LoadingScreen()
+              : const OnboardingScreen1(),
     );
-
-    return MaterialApp(debugShowCheckedModeBanner: false, home: example1);
   }
 }
