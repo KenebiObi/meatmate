@@ -11,6 +11,7 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreen extends State<SignInScreen> {
   TextEditingController emailTextController = TextEditingController();
   TextEditingController passwordTextController = TextEditingController();
+  bool showPassword = false;
   bool rememberMe = false;
   @override
   Widget build(BuildContext context) {
@@ -62,15 +63,17 @@ class _SignInScreen extends State<SignInScreen> {
               // Image
               Image.asset('assets/images/SIgn_Up&SIgn_In_Screen_pic.png'),
               const SizedBox(height: 23.0),
-              //Email text area
+              //Email text areax
               Container(
                 width: 380.0,
                 child: TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  cursorColor: const Color.fromARGB(255, 219, 33, 179),
                   controller: emailTextController,
                   decoration: InputDecoration(
-                    prefixIcon: const Icon(
+                    prefixIcon: Icon(
                       Icons.mail_outline_rounded,
-                      color: Colors.black,
+                      color: Colors.grey[600],
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(24.0),
@@ -99,15 +102,14 @@ class _SignInScreen extends State<SignInScreen> {
               //Password text area
               Container(
                 width: 380.0,
-                child: TextField(
+                child: TextFormField(
+                  cursorColor: const Color.fromARGB(255, 219, 33, 179),
                   controller: passwordTextController,
                   decoration: InputDecoration(
-                    prefixIcon: const Icon(
-                      Icons.lock_outline,
-                      color: Colors.black,
-                    ),
                     suffixIcon: Icon(
-                      Icons.remove_red_eye,
+                      showPassword
+                          ? CupertinoIcons.eye_fill
+                          : CupertinoIcons.eye_slash_fill,
                       color: Colors.grey[600],
                     ),
                     border: OutlineInputBorder(
@@ -132,7 +134,16 @@ class _SignInScreen extends State<SignInScreen> {
                     hintStyle: const TextStyle(
                       color: Color.fromRGBO(236, 236, 236, 1),
                     ),
+                    prefixIcon: Icon(
+                      Icons.lock_outline,
+                      color: Colors.grey[600],
+                    ),
                   ),
+                  onTap: () {
+                    setState(() {
+                      showPassword = true;
+                    });
+                  },
                 ),
               ),
               // Remember me
@@ -167,7 +178,41 @@ class _SignInScreen extends State<SignInScreen> {
                   ],
                 ),
               ),
-              //
+              const SizedBox(
+                height: 24.0,
+              ),
+              // Sign In button
+              GestureDetector(
+                child: Container(
+                  width: 150.0,
+                  height: 65.0,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.horizontal(
+                      left: Radius.circular(32.0),
+                      right: Radius.circular(32.0),
+                    ),
+                    gradient: LinearGradient(
+                      colors: [
+                        Color.fromRGBO(187, 43, 186, 1),
+                        Color.fromRGBO(252, 21, 114, 1),
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Sign In",
+                      style: TextStyle(
+                        color: Color(0XFFFDFDFD),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20.0,
+                        fontFamily: 'Lexend',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

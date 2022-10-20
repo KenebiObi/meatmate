@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:meatmate/Splash_Screens/loading_screen.dart';
 import 'package:meatmate/Splash_Screens/splash_screen.dart';
+import 'package:meatmate/first_screen.dart';
 import 'Onboarding Screens/onboarding_screen_1.dart';
 // import 'package:splash_screen_view/SplashScreenView.dart';
 // import 'loading_page.dart';
@@ -72,7 +73,7 @@ class _MeatmateAppState extends State<MeatmateApp> {
           ? const SplashScreen()
           : secondTimer.isActive
               ? const LoadingScreen()
-              : const OnboardingScreen1(),
+              : First_Screen(),
     );
   }
 }
