@@ -6,10 +6,8 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Image.asset('assets/images/Splash_Screen_logo.png'),
-        ),
+      body: Center(
+        child: Image.asset('assets/images/meet-mate-logo-icon-peach.png'),
       ),
     );
   }

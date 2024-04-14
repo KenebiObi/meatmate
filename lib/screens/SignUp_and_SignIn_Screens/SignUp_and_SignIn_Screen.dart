@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:meatmate/SignUp_and_SignIn_Screens/Sign_In_Screen.dart';
+import 'package:meatmate/screens/SignUp_and_SignIn_Screens/sign_up_display_name.dart';
 
 class SignUpSignInInterface extends StatelessWidget {
   const SignUpSignInInterface({super.key});
@@ -31,14 +31,7 @@ class SignUpSignInInterface extends StatelessWidget {
                             top: Radius.circular(4.0),
                             bottom: Radius.circular(4.0),
                           ),
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromRGBO(187, 43, 186, 1),
-                              Color.fromRGBO(252, 21, 114, 1),
-                            ],
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                          ),
+                          color: Color.fromRGBO(252, 104, 68, 1),
                         ),
                       ),
                       const SizedBox(
@@ -56,18 +49,11 @@ class SignUpSignInInterface extends StatelessWidget {
                 ),
                 const SizedBox(height: 11.0),
                 // Image
-                Image.asset('assets/images/SIgn_Up&SIgn_In_Screen_pic.png'),
+                Image.asset('assets/images/Sign_Up_SIgn_In_Logo.png'),
                 const SizedBox(height: 60.0),
                 // The Sign In button
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const SignInScreen(),
-                      ),
-                    );
-                  },
+                  onTap: () {},
                   child: Container(
                     width: 380.0,
                     height: 52.0,
@@ -76,14 +62,7 @@ class SignUpSignInInterface extends StatelessWidget {
                         left: Radius.circular(32.0),
                         right: Radius.circular(32.0),
                       ),
-                      gradient: LinearGradient(
-                        colors: [
-                          Color.fromRGBO(187, 43, 186, 1),
-                          Color.fromRGBO(252, 21, 114, 1),
-                        ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ),
+                      color: Color.fromRGBO(252, 104, 68, 1),
                     ),
                     child: const Center(
                       child: Text(
@@ -103,24 +82,24 @@ class SignUpSignInInterface extends StatelessWidget {
                 ),
                 // Sign Up Button
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUpDisplayNameScreen(),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 380.0,
                     height: 52.0,
-                    padding: EdgeInsets.all(2.0),
+                    padding: const EdgeInsets.all(2.0),
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.horizontal(
                         left: Radius.circular(32.0),
                         right: Radius.circular(32.0),
                       ),
-                      gradient: LinearGradient(
-                        colors: [
-                          Color.fromRGBO(187, 43, 186, 1),
-                          Color.fromRGBO(252, 21, 114, 1),
-                        ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ),
+                      color: Color.fromRGBO(252, 104, 68, 1),
                     ),
                     child: Container(
                       width: 312.0,
@@ -136,7 +115,7 @@ class SignUpSignInInterface extends StatelessWidget {
                         child: Text(
                           "Sign Up",
                           style: TextStyle(
-                            color: Color.fromRGBO(187, 43, 186, 1),
+                            color: Color.fromRGBO(252, 104, 68, 1),
                             fontWeight: FontWeight.w500,
                             fontSize: 16.0,
                             fontFamily: 'Lexend',

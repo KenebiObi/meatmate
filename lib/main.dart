@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:meatmate/Splash_Screens/loading_screen.dart';
-import 'package:meatmate/Splash_Screens/splash_screen.dart';
+import 'package:meatmate/Screens/Splash_Screens/loading_screen.dart';
+import 'package:meatmate/Screens/Splash_Screens/splash_screen.dart';
 import 'package:meatmate/first_screen.dart';
-import 'Onboarding Screens/onboarding_screen_1.dart';
+import 'Screens/Onboarding Screens/onboarding_screen_1.dart';
 // import 'package:splash_screen_view/SplashScreenView.dart';
 // import 'loading_page.dart';
 // import 'package:meatmate/Onboarding%20Screens/onboarding_Screen_2.dart';
@@ -61,13 +61,19 @@ class _MeatmateAppState extends State<MeatmateApp> {
       setState(() {});
     });
     super.initState();
-
-    Color Coloe = Color.fromRGBO(1, 1, 2, 33);
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          accentColor: Color.fromRGBO(252, 104, 68, 1),
+        ),
+        // colorScheme: ColorScheme.fromSeed(
+        //   seedColor: const Color.fromRGBO(252, 104, 68, 1),
+        // ),
+      ),
       debugShowCheckedModeBanner: false,
       home: firstTimer.isActive
           ? const SplashScreen()

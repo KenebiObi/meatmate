@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "838976178279",
+    "project_id": "chat-app-fdf21",
+    "storage_bucket": "chat-app-fdf21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838976178279:android:953871d2a3fe2601d0ecc2",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTz19ubAQJOOKptOnwl26cshXHgkV4sSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838976178279:android:0543f87eac1af37bd0ecc2",
+        "android_client_info": {
+          "package_name": "com.example.meatmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTz19ubAQJOOKptOnwl26cshXHgkV4sSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
